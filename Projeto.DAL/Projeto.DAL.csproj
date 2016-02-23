@@ -41,9 +41,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Persistence\Conexao.cs" />
+    <Compile Include="Persistence\TimeDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Projeto.Entity\Projeto.Entity.csproj">
+      <Project>{ac9a89b6-4d21-41c3-af47-487ffbb8cb1b}</Project>
+      <Name>Projeto.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
