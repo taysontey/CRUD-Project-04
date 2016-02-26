@@ -19,17 +19,9 @@
                     </ItemTemplate>
                 </asp:TemplateField>
 
-                <asp:TemplateField HeaderText="Nome" HeaderStyle-CssClass="text-center" ItemStyle-HorizontalAlign="Center">
-                    <ItemTemplate>
-                        <asp:Label ID="lblNome" runat="server" Text='<%#Eval("Nome") %>'></asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField>
+                <asp:BoundField ItemStyle-CssClass="t-cost" HeaderText="Nome" HeaderStyle-CssClass="text-center" ItemStyle-Width="200" ItemStyle-HorizontalAlign="Center" DataField="Nome" HtmlEncode="False" />
 
-                <asp:TemplateField HeaderText="Data de Fundação" HeaderStyle-CssClass="text-center" ItemStyle-HorizontalAlign="Center">
-                    <ItemTemplate>
-                        <asp:Label ID="lblDataFundacao" runat="server" Text='<%#Eval("DataFundacao") %>'></asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField>
+                <asp:BoundField ItemStyle-CssClass="t-cost" HeaderText="Data de Fundação" HeaderStyle-CssClass="text-center" ItemStyle-HorizontalAlign="Center" DataField="DataFundacao" HtmlEncode="False" DataFormatString="{0:d}" />
 
                 <asp:CommandField ShowDeleteButton="true" ShowEditButton="true" ButtonType="Link" HeaderText="Opções" HeaderStyle-CssClass="text-center" ItemStyle-HorizontalAlign="Center" />
 

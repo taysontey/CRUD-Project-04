@@ -66,6 +66,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Index.aspx" />
+    <Content Include="Pages\Jogador_Pages\Cadastro.aspx" />
     <Content Include="Pages\Shared\Layout.Master" />
     <Content Include="Pages\Time_Pages\Cadastro.aspx" />
     <Content Include="packages.config" />
@@ -93,6 +94,13 @@
     </Compile>
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Jogador_Pages\Cadastro.aspx.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Jogador_Pages\Cadastro.aspx.designer.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Shared\Layout.Master.cs">
       <DependentUpon>Layout.Master</DependentUpon>
@@ -126,9 +134,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Pages\Jogador_Pages\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Projeto.DAL\Projeto.DAL.csproj">
       <Project>{d260ac26-3f12-4e19-9234-333b4aa811a9}</Project>
