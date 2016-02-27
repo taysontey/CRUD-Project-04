@@ -21,7 +21,7 @@
 
                 <asp:BoundField ItemStyle-CssClass="t-cost" HeaderText="Nome" HeaderStyle-CssClass="text-center" ItemStyle-HorizontalAlign="Center" DataField="Nome" HtmlEncode="False" />
 
-                <asp:BoundField ItemStyle-CssClass="t-cost" HeaderText="Data de Fundação" HeaderStyle-CssClass="text-center" ItemStyle-HorizontalAlign="Center" DataField="DataFundacao" HtmlEncode="False" DataFormatString="{0:d}" />
+                <asp:BoundField ApplyFormatInEditMode="true" ItemStyle-CssClass="t-cost" HeaderText="Data de Fundação" HeaderStyle-CssClass="text-center" ItemStyle-HorizontalAlign="Center" DataField="DataFundacao" HtmlEncode="False" DataFormatString="{0:d}" />
 
                 <asp:CommandField ShowDeleteButton="true" ShowEditButton="true" ButtonType="Link" HeaderText="Opções" HeaderStyle-CssClass="text-center" ItemStyle-HorizontalAlign="Center" />
 
