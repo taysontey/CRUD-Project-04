@@ -67,6 +67,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Index.aspx" />
     <Content Include="Pages\Jogador_Pages\Cadastro.aspx" />
+    <Content Include="Pages\Jogador_Pages\Consulta.aspx" />
     <Content Include="Pages\Shared\Layout.Master" />
     <Content Include="Pages\Time_Pages\Cadastro.aspx" />
     <Content Include="packages.config" />
@@ -101,6 +102,13 @@
     </Compile>
     <Compile Include="Pages\Jogador_Pages\Cadastro.aspx.designer.cs">
       <DependentUpon>Cadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Jogador_Pages\Consulta.aspx.cs">
+      <DependentUpon>Consulta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Jogador_Pages\Consulta.aspx.designer.cs">
+      <DependentUpon>Consulta.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Shared\Layout.Master.cs">
       <DependentUpon>Layout.Master</DependentUpon>

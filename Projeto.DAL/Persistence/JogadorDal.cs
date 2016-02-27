@@ -85,7 +85,7 @@ namespace Projeto.DAL.Persistence
             {
                 OpenConnection();
 
-                Cmd = new SqlCommand("SELECT * FROM TB_JOGADOR", Con);
+                Cmd = new SqlCommand("SELECT j.IDJOGADOR, j.NOME, j.APELIDO, j.DATANASCIMENTO, j.POSICAO, t.NOME as 'TIME' FROM TB_JOGADOR as j INNER JOIN TB_TIME as t on j.IDTIME = t.IDTIME", Con);
                 Dr = Cmd.ExecuteReader();
 
                 List<Jogador> lista = new List<Jogador>();
@@ -98,8 +98,10 @@ namespace Projeto.DAL.Persistence
                     j.Apelido = Convert.ToString(Dr["APELIDO"]);
                     j.DataNascimento = Convert.ToDateTime(Dr["DATANASCIMENTO"]);
                     j.Posicao = Convert.ToString(Dr["POSICAO"]);
-                    j.IdTime = Convert.ToInt32(Dr["IDTIME"]);
 
+                    j.Time = new Time();
+                    j.Time.Nome = Convert.ToString(Dr["TIME"]);
+                    
                     lista.Add(j);
                 }
 

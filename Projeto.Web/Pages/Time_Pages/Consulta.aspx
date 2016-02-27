@@ -19,7 +19,7 @@
                     </ItemTemplate>
                 </asp:TemplateField>
 
-                <asp:BoundField ItemStyle-CssClass="t-cost" HeaderText="Nome" HeaderStyle-CssClass="text-center" ItemStyle-Width="200" ItemStyle-HorizontalAlign="Center" DataField="Nome" HtmlEncode="False" />
+                <asp:BoundField ItemStyle-CssClass="t-cost" HeaderText="Nome" HeaderStyle-CssClass="text-center" ItemStyle-HorizontalAlign="Center" DataField="Nome" HtmlEncode="False" />
 
                 <asp:BoundField ItemStyle-CssClass="t-cost" HeaderText="Data de Fundação" HeaderStyle-CssClass="text-center" ItemStyle-HorizontalAlign="Center" DataField="DataFundacao" HtmlEncode="False" DataFormatString="{0:d}" />
 
