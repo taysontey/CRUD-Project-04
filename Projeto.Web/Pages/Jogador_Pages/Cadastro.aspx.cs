@@ -13,7 +13,7 @@ namespace Projeto.Web.Pages.Jogador_Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!Page.IsPostBack)
+            if (!Page.IsPostBack)
             {
                 dropDownList();
                 dropDownTimes.Items.Insert(0, new ListItem("Escolha um Time", ""));
@@ -46,16 +46,21 @@ namespace Projeto.Web.Pages.Jogador_Pages
 
                 lblMensagem.Text = "Jogador " + j.Nome + ", cadastrado com sucesso.";
 
-                txtNome.Text = string.Empty;
-                txtApelido.Text = string.Empty;
-                txtPosicao.Text = string.Empty;
-                txtDataNascimento.Text = string.Empty;
-                dropDownTimes.SelectedIndex = 0;
+                LimparCampos();
             }
             catch (Exception ex)
             {
                 lblMensagem.Text = ex.Message;
             }
+        }
+
+        protected void LimparCampos()
+        {
+            txtNome.Text = string.Empty;
+            txtApelido.Text = string.Empty;
+            txtPosicao.Text = string.Empty;
+            txtDataNascimento.Text = string.Empty;
+            dropDownTimes.SelectedIndex = 0;
         }
     }
 }

@@ -29,14 +29,19 @@ namespace Projeto.Web.Pages.Time_Pages
 
                 lblMensagem.Text = "Time " + t.Nome + ", cadastrado com sucesso.";
 
-                txtNome.Text = string.Empty;
-                txtDataFundacao.Text = string.Empty;
+                LimparCampos();
 
             }
             catch (Exception ex)
             {
                 lblMensagem.Text = ex.Message;
             }
+        }
+
+        protected void LimparCampos()
+        {
+            txtNome.Text = string.Empty;
+            txtDataFundacao.Text = string.Empty;
         }
     }
 }

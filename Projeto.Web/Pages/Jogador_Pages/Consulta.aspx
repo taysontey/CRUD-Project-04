@@ -12,7 +12,6 @@
         <asp:GridView ID="gridJogador" EmptyDataText="Não há registros para exibir" CssClass="table table-hover" runat="server" AutoGenerateColumns="false" GridLines="None" DataKeyNames="idJogador" OnRowDataBound="gridJogador_RowDataBound" OnRowDeleting="gridJogador_RowDeleting" OnRowEditing="gridJogador_RowEditing" OnRowUpdating="gridJogador_RowUpdating" OnRowCancelingEdit="gridJogador_RowCancelingEdit">
 
             <Columns>
-
                 <asp:TemplateField HeaderText="Código" HeaderStyle-CssClass="text-center" ItemStyle-HorizontalAlign="Center">
                     <ItemTemplate>
                         <asp:Label ID="lblIdTime" runat="server" Text='<%#Eval("IdJogador") %>'></asp:Label>
@@ -31,19 +30,16 @@
                     <EditItemTemplate>
                         <asp:DropDownList ID="dropDownTimes" runat="server"></asp:DropDownList>
                     </EditItemTemplate>
-                    
+
                     <ItemTemplate>
                         <asp:Label ID="lblTime" runat="server" Text='<%#Eval("Time.Nome") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
 
                 <asp:CommandField ShowDeleteButton="true" ShowEditButton="true" ButtonType="Link" HeaderText="Opções" HeaderStyle-CssClass="text-center" ItemStyle-HorizontalAlign="Center" />
-
             </Columns>
 
         </asp:GridView>
-
         <asp:Label ID="lblMensagem" runat="server"></asp:Label>
     </div>
-
 </asp:Content>

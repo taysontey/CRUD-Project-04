@@ -40,7 +40,6 @@
                     <asp:DropDownList ID="dropDownTimes" runat="server"></asp:DropDownList>
                 </div>
             </div>
-
             <hr />
 
             <div class="form-group">

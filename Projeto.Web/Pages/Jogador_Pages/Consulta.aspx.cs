@@ -27,6 +27,24 @@ namespace Projeto.Web.Pages.Jogador_Pages
             gridJogador.DataBind();
         }
 
+        protected void gridJogador_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                if ((e.Row.RowState & DataControlRowState.Edit) > 0)
+                {
+                    DropDownList dropDown = (DropDownList)e.Row.FindControl("dropDownTimes");
+                    TimeDal d = new TimeDal();
+                    dropDown.DataSource = d.FindAll();
+                    dropDown.DataTextField = "Nome";
+                    dropDown.DataValueField = "IdTime";
+                    dropDown.DataBind();
+                    dropDown.Items.Insert(0, new ListItem("Escolha um Time", ""));
+                    dropDown.SelectedIndex = 0;
+                }
+            }
+        }
+
         protected void gridJogador_RowEditing(object sender, GridViewEditEventArgs e)
         {
             gridJogador.EditIndex = e.NewEditIndex;
@@ -65,24 +83,6 @@ namespace Projeto.Web.Pages.Jogador_Pages
             catch (Exception ex)
             {
                 lblMensagem.Text = ex.Message;
-            }
-        }
-
-        protected void gridJogador_RowDataBound(object sender, GridViewRowEventArgs e)
-        {
-            if(e.Row.RowType == DataControlRowType.DataRow)
-            {
-                if((e.Row.RowState & DataControlRowState.Edit) > 0)
-                {
-                    DropDownList dropDown = (DropDownList)e.Row.FindControl("dropDownTimes");
-                    TimeDal d = new TimeDal();
-                    dropDown.DataSource = d.FindAll();
-                    dropDown.DataTextField = "Nome";
-                    dropDown.DataValueField = "IdTime";
-                    dropDown.DataBind();
-                    dropDown.Items.Insert(0, new ListItem("Escolha um Time", ""));
-                    dropDown.SelectedIndex = 0;
-                }
             }
         }
 
