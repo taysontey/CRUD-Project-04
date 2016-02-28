@@ -9,7 +9,7 @@
 
     <div class="container">
 
-        <asp:GridView ID="gridJogador" EmptyDataText="Não há registros para exibir" CssClass="table table-hover" runat="server" AutoGenerateColumns="false" GridLines="None" DataKeyNames="idJogador" OnRowDeleting="gridJogador_RowDeleting" OnRowEditing="gridJogador_RowEditing" OnRowUpdating="gridJogador_RowUpdating" OnRowCancelingEdit="gridJogador_RowCancelingEdit">
+        <asp:GridView ID="gridJogador" EmptyDataText="Não há registros para exibir" CssClass="table table-hover" runat="server" AutoGenerateColumns="false" GridLines="None" DataKeyNames="idJogador" OnRowDataBound="gridJogador_RowDataBound" OnRowDeleting="gridJogador_RowDeleting" OnRowEditing="gridJogador_RowEditing" OnRowUpdating="gridJogador_RowUpdating" OnRowCancelingEdit="gridJogador_RowCancelingEdit">
 
             <Columns>
 
@@ -23,11 +23,19 @@
 
                 <asp:BoundField ItemStyle-CssClass="t-cost" HeaderText="Apelido" HeaderStyle-CssClass="text-center" ItemStyle-HorizontalAlign="Center" DataField="Apelido" HtmlEncode="False" />
 
-                <asp:BoundField ItemStyle-CssClass="t-cost" HeaderText="Data de Nascimento" HeaderStyle-CssClass="text-center" ItemStyle-HorizontalAlign="Center" DataField="DataNascimento" HtmlEncode="False" DataFormatString="{0:d}" />
+                <asp:BoundField ApplyFormatInEditMode="true" ItemStyle-CssClass="t-cost" HeaderText="Data de Nascimento" HeaderStyle-CssClass="text-center" ItemStyle-HorizontalAlign="Center" DataField="DataNascimento" HtmlEncode="False" DataFormatString="{0:d}" />
 
                 <asp:BoundField ItemStyle-CssClass="t-cost" HeaderText="Posição" HeaderStyle-CssClass="text-center" ItemStyle-HorizontalAlign="Center" DataField="Posicao" HtmlEncode="False" />
 
-                <asp:BoundField ItemStyle-CssClass="t-cost" HeaderText="Time" HeaderStyle-CssClass="text-center" ItemStyle-HorizontalAlign="Center" DataField="Time.Nome" HtmlEncode="False" />
+                <asp:TemplateField HeaderText="Time" HeaderStyle-CssClass="text-center" ItemStyle-HorizontalAlign="Center">
+                    <EditItemTemplate>
+                        <asp:DropDownList ID="dropDownTimes" runat="server"></asp:DropDownList>
+                    </EditItemTemplate>
+                    
+                    <ItemTemplate>
+                        <asp:Label ID="lblTime" runat="server" Text='<%#Eval("Time.Nome") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
 
                 <asp:CommandField ShowDeleteButton="true" ShowEditButton="true" ButtonType="Link" HeaderText="Opções" HeaderStyle-CssClass="text-center" ItemStyle-HorizontalAlign="Center" />
 
